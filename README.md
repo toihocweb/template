@@ -1,6 +1,4 @@
-# template
-this template includes gulp...
-# template
+
   # Step 1: 
     npm i
   # Step 2:
