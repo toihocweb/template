@@ -1,8 +1,47 @@
-body{
-    background: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@import 'mobile.scss';
+
+$color-green: #2ecc71;
+$color-blue: #3498db;
+$color-orange: #e67e22;
+$color-yellow:#f1c40f;
+
+$h-height : 10vh;
+$m-height: 80vh;
+$f-height : 10vh;
+
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-h1{
-    color: whitesmoke;
+.container{
+    .header{
+        height: $h-height;
+        background: $color-blue;
+        @extend .flex-center;
+    }
+    .main{
+        height: $m-height;
+        display: flex;
+        
+        .content{
+            background: $color-green;
+            // flex-basis: 50%;
+            flex:  1 1 auto;
+          @extend .flex-center;
+        }
+        .aside{
+            // flex-basis: 50%;
+            flex:  1 1 auto;
+            @extend .flex-center;
+            background: $color-orange;
+        }
+    }
+    .footer{
+        height: $f-height;
+        @extend .flex-center;
+        background: $color-yellow;
+    }
 }

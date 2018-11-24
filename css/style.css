@@ -1,6 +1,26 @@
-body {
-  background: #333;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+@media (max-width: 768px) {
+  .container .main {
+    flex-direction: column; } }
 
-h1 {
-  color: whitesmoke; }
+.flex-center, .container .header, .container .main .content, .container .main .aside, .container .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.container .header {
+  height: 10vh;
+  background: #3498db; }
+
+.container .main {
+  height: 80vh;
+  display: flex; }
+  .container .main .content {
+    background: #2ecc71;
+    flex: 1 1 auto; }
+  .container .main .aside {
+    flex: 1 1 auto;
+    background: #e67e22; }
+
+.container .footer {
+  height: 10vh;
+  background: #f1c40f; }
