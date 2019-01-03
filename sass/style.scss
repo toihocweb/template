@@ -1,47 +1,106 @@
-@import 'mobile.scss';
-
-$color-green: #2ecc71;
-$color-blue: #3498db;
-$color-orange: #e67e22;
-$color-yellow:#f1c40f;
-
-$h-height : 10vh;
-$m-height: 80vh;
-$f-height : 10vh;
-
-
-.flex-center{
+.f-between{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+img{
+    max-width: 100%;
 }
 
 .container{
-    .header{
-        height: $h-height;
-        background: $color-blue;
-        @extend .flex-center;
-    }
-    .main{
-        height: $m-height;
-        display: flex;
-        
-        .content{
-            background: $color-green;
-            // flex-basis: 50%;
-            flex:  1 1 auto;
-          @extend .flex-center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.top{
+    background: url(../img/hero-1.jpg) no-repeat top center/cover;
+    padding-bottom: 80px;
+    header{
+        padding-top: 40px;  
+        .container{
+            .logo{
+
+            }
+            .navbar{
+                ul{
+                    display: flex;
+                    li{
+                        margin: 0px 20px;
+                        a{
+                            position: relative;
+                            &:hover{
+                                &::after{
+                                    width: 100%;
+                                }
+                            }
+                            padding: 30px 0px;
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 0%;
+                                height: 3px;
+                                background: green;
+                                transition: all 0.5s;
+                            }
+                        }
+                    }
+                }
+            }
         }
-        .aside{
-            // flex-basis: 50%;
-            flex:  1 1 auto;
-            @extend .flex-center;
-            background: $color-orange;
+    }
+    .fv{
+        margin-top: 10px;
+        .text{
+            flex-basis: 40%;
+            $fv-color : #00A69B;
+            h1{
+                color: $fv-color;
+                font-size: 48px;
+                font-weight: normal;
+            }
+            a{
+                color: white;
+                background: $fv-color;
+                margin-top: 40px;
+                padding: 10px 20px;
+                border-radius: 20px;
+                display: inline-block;
+            }
         }
+
+        .fv-img{
+            flex-basis:570px;
+            margin-right: 6px;
+        }
+
     }
-    .footer{
-        height: $f-height;
-        @extend .flex-center;
-        background: $color-yellow;
+}
+
+@mixin circle($r,$color){
+    height: $r;
+    width: $r;
+    border-radius: 50%;
+    background: $color;
+}
+
+
+.top-button{
+    @include circle(40px,#00a69b);
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: all 1s;
+    cursor: pointer;
+    &:hover{
+        background: black;
     }
+    display: none;
+}
+
+.ranh{
+    height: 1000px;
+    background: #fff;
 }

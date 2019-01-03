@@ -1,7 +1,17 @@
 @media (max-width: 768px){
-    .container{
-        .main{
-            flex-direction: column;
-        }
+
+    .menu-toggle{
+        display: flex !important;
     }
+    .navbar{
+        display: none;
+    }
+}
+
+@media (max-width: 1000px){
+
+    .container{
+    width: 95%;
+    }
+
 }
